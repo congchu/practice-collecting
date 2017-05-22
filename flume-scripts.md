@@ -80,8 +80,8 @@ $ ./bin/flume-ng agent -c ./conf -f ./conf/exec.conf -name a1 -Dflume.root.logge
 ```
 
 ```shell
-$ echo hello >> /root/var/data/log
-$ echo flume >> /root/var/data/log
+$ echo hello >> /root/var/data.log
+$ echo flume >> /root/var/data.log
 ```
 
 ### Syslog TCP Source
@@ -159,7 +159,7 @@ a1.sinks = s1
 
 a1.sources.r1.type = avro
 a1.sources.r1.channels = c1
-a1.sources.r1.bind = c1
+a1.sources.r1.bind = localhost
 a1.sources.r1.port = 4141
 
 a1.channels.c1.type = memory 
@@ -196,6 +196,8 @@ a1.sinks.s1.hdfs.fileType = DataStream
 a1.sinks.s1.hdfs.round = true
 a1.sinks.s1.hdfs.roundValue = 10
 a1.sinks.s1.hdfs.roundUnit = minute
+a1.sinks.s1.hdfs.useLocalTimeStamp=true
+
 ```
 
 ### Logger Sink
