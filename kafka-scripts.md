@@ -59,6 +59,8 @@ $ bin/kafka-console-consumer.sh \
   --topic test \
   --from-beginning
 ```
+--> zookeeper option -> ??
+
 
 ## 4. Producer
 
